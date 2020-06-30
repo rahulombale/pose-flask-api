@@ -1,0 +1,30 @@
+version: '3.3'
+
+services:
+  pose-backend-service_flask-elite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=speechPose-d839583b988e.json
+    container_name: flask-elite
+    expose:
+      - 5001
+    ports:
+      - 5001:5001
+    network_mode:
+      host
+    volumes:
+      - /home/ubuntu/elitfit_db/data.db:/pose_backend/data.db
+
+  nginx:
+    build:
+        context: ../
+        dockerfile: EF_Prod_Backend/nginx/Dockerfile
+    container_name: nginx-elite
+    depends_on:
+     - pose-backend-service_flask-elite
+    ports:
+     -  8086:8086
+    network_mode:
+      host
