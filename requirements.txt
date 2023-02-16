@@ -6,7 +6,7 @@ google-cloud-speech
 pydub==0.23.1
 Wave==0.0.2
 uWSGI
-Werkzeug==1.0.0
+Werkzeug==2.2.3
 ffmpeg-python
 ffmpeg
 Flask-Mail
