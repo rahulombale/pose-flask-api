@@ -1,6 +1,6 @@
 flask-cors
 ffprobe==0.5
-Flask==1.1.1
+Flask==2.3.2
 Flask-RESTful==0.3.8
 google-cloud-speech
 pydub==0.23.1
